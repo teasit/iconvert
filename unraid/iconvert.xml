@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>iconvert</Name>
+  <Repository>ghcr.io/OWNER/iconvert:latest</Repository>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Overview>Converts an image URL (e.g. SVG) to PNG or another format over HTTP. Use it as a container Icon URL: http://[IP]:8000/convert.png?source=&lt;url&gt;</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8000]/docs</WebUI>
+  <ExtraParams>--user 99:100</ExtraParams>
+  <Config Name="Port" Target="8000" Default="8000" Mode="tcp" Description="HTTP port" Type="Port" Display="always" Required="true">8000</Config>
+  <Config Name="Cache" Target="/cache" Default="/mnt/user/appdata/iconvert" Mode="rw" Description="Converted image cache" Type="Path" Display="always" Required="true">/mnt/user/appdata/iconvert</Config>
+  <Config Name="ALLOWED_HOSTS" Target="ALLOWED_HOSTS" Default="" Mode="" Description="Optional comma-separated list of allowed source hostnames" Type="Variable" Display="advanced" Required="false"></Config>
+  <Config Name="MAX_SIZE" Target="MAX_SIZE" Default="2048" Mode="" Description="Maximum output size in px" Type="Variable" Display="advanced" Required="false">2048</Config>
+</Container>

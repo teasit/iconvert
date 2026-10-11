@@ -1,0 +1,13 @@
+services:
+  iconvert:
+    build: .
+    image: iconvert:latest
+    container_name: iconvert
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./cache:/cache
+    environment:
+      # - ALLOWED_HOSTS=raw.githubusercontent.com,cdn.jsdelivr.net
+      - MAX_SIZE=2048

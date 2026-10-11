@@ -27,8 +27,15 @@ Results are cached on disk in `/cache`, keyed by all parameters.
 ### Unraid icon URL
 
 ```
-http://192.168.88.140:8000/convert.png?source=https://example.com/logo.svg
+http://localhost:8000/convert.png?source=https://example.com/logo.svg
 ```
+
+Unraid downloads container icons on the server itself, so `localhost` works
+when iconvert's port is published on the Unraid host, i.e. the container uses
+the **bridge** network with `8000:8000` (or **host** networking). On a custom
+network where the container gets its own IP (`br0`, macvlan/ipvlan) use that
+IP instead, e.g. `http://192.168.88.140:8000/convert.png?source=…` — the host
+usually can't reach such containers, so bridge is recommended.
 
 - Include `http://`.
 - Prefer the `/convert.png` form so the URL ends in `.png`.

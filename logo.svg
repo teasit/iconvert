@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <clipPath id="frame"><rect x="62" y="74" width="132" height="108" rx="18"/></clipPath>
+    <marker id="head" viewBox="0 0 10 10" refX="4" refY="5" markerWidth="2.4" markerHeight="2.4" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  <!-- conversion arrows -->
+  <g fill="none" stroke="#3b82f6" stroke-width="16" stroke-linecap="round" marker-end="url(#head)">
+    <path d="M21.6 109.2 A108 108 0 0 1 215 66"/>
+    <path d="M234.4 146.8 A108 108 0 0 1 41 190"/>
+  </g>
+  <!-- image -->
+  <rect x="62" y="74" width="132" height="108" rx="18" fill="#1e3a8a"/>
+  <g clip-path="url(#frame)">
+    <circle cx="160" cy="106" r="13" fill="#fbbf24"/>
+    <path d="M104 182 L150 128 L204 182 z" fill="#10b981"/>
+    <path d="M54 182 L54 168 L104 114 L158 182 z" fill="#34d399"/>
+  </g>
+</svg>

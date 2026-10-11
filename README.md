@@ -1,4 +1,6 @@
-# iconvert
+<p align="center"><img src="logo.svg" alt="iconvert logo" width="128"></p>
+
+<h1 align="center">iconvert</h1>
 
 Tiny HTTP service that fetches an image from a URL and returns it converted to
 another format — built for Unraid, whose Docker icons must be PNG while many
@@ -24,10 +26,21 @@ GET /health
 
 Results are cached on disk in `/cache`, keyed by all parameters.
 
+Examples, using this repo's own logo as the source:
+
+```sh
+# SVG -> 256 px PNG
+curl -o logo.png "http://localhost:8000/convert.png?source=https://raw.githubusercontent.com/teasit/iconvert/main/logo.svg"
+# SVG -> 64 px WebP
+curl -o logo.webp "http://localhost:8000/convert.webp?source=https://raw.githubusercontent.com/teasit/iconvert/main/logo.svg&size=64"
+# SVG -> JPG on a black background
+curl -o logo.jpg "http://localhost:8000/convert?source=https://raw.githubusercontent.com/teasit/iconvert/main/logo.svg&format=jpg&bg=000000"
+```
+
 ### Unraid icon URL
 
 ```
-http://localhost:8000/convert.png?source=https://example.com/logo.svg
+http://localhost:8000/convert.png?source=https://raw.githubusercontent.com/teasit/iconvert/main/logo.svg
 ```
 
 Unraid downloads container icons on the server itself, so `localhost` works

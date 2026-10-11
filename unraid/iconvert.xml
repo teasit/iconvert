@@ -7,6 +7,7 @@
   <Privileged>false</Privileged>
   <Overview>Converts an image URL (e.g. SVG) to PNG or another format over HTTP. Use it as a container Icon URL: http://localhost:8000/convert.png?source=&lt;url&gt; (requires bridge or host network so the port is published on the Unraid host).</Overview>
   <Category>Tools:</Category>
+  <Icon>https://raw.githubusercontent.com/teasit/iconvert/main/logo.png</Icon>
   <WebUI>http://[IP]:[PORT:8000]/docs</WebUI>
   <ExtraParams>--user 99:100</ExtraParams>
   <Config Name="Port" Target="8000" Default="8000" Mode="tcp" Description="HTTP port" Type="Port" Display="always" Required="true">8000</Config>
